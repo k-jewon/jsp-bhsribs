@@ -1,0 +1,511 @@
+/*foneawesome 4.7*/
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@font-face {
+    font-family: "povertyM";
+    src: url("../font/청빈m.woff") format('woff');
+}
+
+body{
+    -ms-overflow-style: none;
+    }
+    
+::-webkit-scrollbar {
+     display: none;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.mb-1{
+    margin-bottom: 1em;
+}
+.main_header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.font-white{
+	color: white;
+}
+/* 메뉴 */
+.menu{
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flow-root;
+}
+.menu .logo{
+    color: black;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+.logo a{
+    font-family: "povertyM", sans-serif;
+    font-size: 30px;
+}
+.menu .logo a:visited,
+.menu .logo a:link,
+.menu .logo a:hover,
+.menu .logo a:active{
+    color: black;
+}
+.menu .menu_item {
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    position: absolute;
+}
+.menu .menu_item .item{
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+}
+.menu .menu_item .item a{
+    font-family: 'Poppins', sans-serif;
+}
+.menu .menu_item .item a:visited,
+.menu .menu_item .item a:link,
+.menu .menu_item .item a:hover,
+.menu .menu_item .item a:active{
+    color: black;
+}
+
+/* 첫번째 슬라이드 */
+.main_header .slider{
+    height: 100%;
+    width: 100%;
+}
+.main_header .slider .slide1{
+    background: url("../images/내부1.jpg") no-repeat center;
+}
+.main_header .slider .slide2{
+    background: url("../images/2.jpg") no-repeat center;
+}
+.main_header .slider .slide3{
+    background: url("../images/3.jpg") no-repeat center;
+}
+.main_header .slider .slide1,
+.main_header .slider .slide2,
+.main_header .slider .slide3{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+.slide_bg{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.slick-dots{
+    position: absolute;
+    display: flow-root;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slick-dots li{
+    float: left;
+}
+.slick-dots li button{
+    font-size: 0;
+    width: 10px;
+    height: 12px;
+    border-radius: 30px;
+    border: 0px;
+    margin-right: 10px;
+    background: lightgray;
+    
+}
+
+.slick-dots li.slick-active button{
+    background: gray;
+}
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+}
+/* 메뉴소개 */
+
+.img {
+    margin: 0 auto;
+    width: 330px;
+    height: 330px;
+    overflow: hidden;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.content1{
+    position: relative;
+}
+.content1 .content1_item img:hover {
+    transform: scale(1.2);
+}
+.content1 .content1_item p{
+    text-align: center;
+}
+.title{
+    font-size: 30px;
+    margin: 20px;
+}
+.title2{
+    font-size: 25px;
+    margin: 20px 0;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.title .plus{
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.plus:hover,
+.plus:link,
+.plus:active,
+.plus:visited{
+    color: black;
+}
+
+.prev_btn,
+.next_btn{
+    background-color: transparent;
+    position: absolute;
+    border: 0;
+    color: white;
+    font-size: 50px;
+    top: 45%;
+    transform: translateY(-50%);
+}
+.prev_btn{
+    left: 20px;
+}
+.next_btn{
+    right: 20px;
+}
+
+/* 오시는 길 */
+.content2{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+.map{
+    width: 300px;
+    height: 300px;
+    float: left;
+    background: url("../images/map.png") no-repeat;
+    background-size: cover;
+}
+.map_text{
+    margin-left: 100px;
+    height: 300px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    width: 100%;
+    height: 100px;
+    background: black;
+    position: absolute;
+    transform: translateY(100%);
+    margin-top: -100px;
+}
+footer .logo{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+/* 로그인, 회원가입, 예약문의 페이지 */
+.page{
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+    background: black;
+}
+.login_page{
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    background: lightgray;
+    border-radius:10px;
+}
+.form_group{
+    width:90%;
+    margin: 30px auto;
+    box-sizing: border-box;
+    color:black;
+    font-weight: bold;
+}
+.login_input{
+    width:calc(100% - 1px);
+    height: 35px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 5px;
+}
+.login_btn{
+    width: 100%;
+    height: 40px;
+    border: 0;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.form_group a:visited,
+.form_group a:link,
+.form_group a:hover,
+.form_group a:active{
+    color: black;
+}
+.text{
+    resize: none;
+    width:calc(100% - 5px);
+    border: 0;
+    height: 100px;
+}
+
+/* 메뉴보기 */
+.menu_page{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu_list{
+    position: relative;
+    overflow: hidden;
+    background: white;
+    background-size: cover;
+}
+.menu_box{
+    width: 30%;
+    height: 30%;
+    margin: 0 1%;
+    float: left;
+}
+.menu_list .menu_box img:hover {
+    transform: scale(1.2);
+}
+.menu_list .menu_box p{
+    text-align: center;
+}
+/* 게시판 */
+.page_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0 20px 0;
+}
+.write_btn{
+    margin-right: 20px;
+    background: black;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+}
+.board_list{
+    height: 800px;
+}
+.board_list .board_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    background: black;
+    color:white;
+    padding: 0 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.board_list .board_line{
+    height: 60px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.board_list .board_line:hover{
+    background: lightgray;
+    cursor: pointer;
+}
+.board_list .board_line .board_title{
+    margin-left: 20px;
+}
+.board_list .board_line .board_date{
+    margin-right: 20px;
+}
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1100px) {
+    .container{
+        width: 100%;
+    }
+    .menu_box{
+        width: 45%;
+        height: 45%;
+        margin: 0 1%;
+        float: left;
+    }
+    .prev_btn,
+    .next_btn{
+        color: black;
+    }
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) { 
+    .container{
+        width: 100%;
+    }
+    /*모바일 메뉴 */
+    .menu{
+        background-color: white;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        z-index: 10;
+        display: flow-root;
+    }
+    .menu .logo{
+        color: black;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+    }
+    .logo a{
+        font-size: 25px;
+    }
+    .menu_bar{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+    }
+    .menu_line1,
+    .menu_line2,
+    .menu_line3{
+        height: 4px;
+        margin-bottom: 7px;
+        background-color: black;
+        transition: 0.5s;
+        border-radius:10px
+    }
+    .menu_bar.active .menu_line1{
+        transform: rotateZ(45deg);
+        margin-top: 13px;
+    }
+    .menu_bar.active .menu_line2{
+        transform: rotateZ(135deg);
+        margin-top: -11px;
+    }
+    .menu_bar.active .menu_line3{
+        display: none;
+    }
+    .menu .menu_item {
+        top: 60px;
+        right: 0;
+        position: absolute;
+        transform: translateY(-130%);
+        width: 100%;
+        background-color: white;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .menu .menu_item.active {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    .menu .menu_item .item{
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid black;
+        color: black;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .menu .menu_item .item:last-child{
+    	border-bottom:1px solid black;
+    }
+
+    .prev_btn,
+    .next_btn{
+        color: black;
+    }
+
+    .content2{
+        height: 600px;
+        display: block;
+        
+        margin: 30px;
+    }
+    /* 오시는길 */
+    .map{
+        width: 330px;
+        height: 300px;
+        margin: 0 auto;
+        float: none;
+        background: url("../images/map.png") no-repeat;
+        background-size: cover;
+    }
+    .map_text{
+        margin-left: 0px;
+        width: 100%;
+        height: 300px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* 로그인,회원가입,예약문의 페이지 */
+    .login_page{
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: lightgray;
+    }
+    .menu_box .img {
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .menu_box{
+        width: 30%;
+        height: 250px;
+        margin: 0 1%;
+        float: left;
+    }
+    .title2{
+        font-size: 20px;
+    }
+}
+
