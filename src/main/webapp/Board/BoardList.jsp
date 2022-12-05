@@ -11,7 +11,7 @@
 				<p>글쓰기 기능은 로그인 후 사용 가능합니다.</p>
 			</c:when>
 			<c:otherwise>
-				<button class="write_btn" href="Board?command=Board_write_form">글쓰기</button>
+				<button class="write_btn" onclick="location.href='Board?command=Board_write_form'">글쓰기</button>
 			</c:otherwise>
 		</c:choose>
 
@@ -22,8 +22,7 @@
 			<div>작성날짜</div>
 		</li>
 		<c:forEach var="board" items="${List}">
-			<li class="board_line"
-				onclick="location.href='Board?command=Board_view&bid=${board.bid}'">
+			<li class="board_line" onclick="location.href='Board?command=Board_view&bid=${board.bid}'">
 				<div class="board_title">
 					<p class="mb-1">${board.title}</p>
 					<span>${board.name}</span>

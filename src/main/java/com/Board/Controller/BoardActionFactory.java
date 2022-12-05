@@ -2,6 +2,9 @@ package com.Board.Controller;
 
 import com.Board.Controller.action.BoardAction;
 import com.Board.Controller.action.BoardListAction;
+import com.Board.Controller.action.BoardViewAction;
+import com.Board.Controller.action.BoardWriteAction;
+import com.Board.Controller.action.BoardWriteFormAction;
 
 public class BoardActionFactory {
 	private BoardActionFactory() {}
@@ -14,6 +17,12 @@ public class BoardActionFactory {
 		
 		if (command.equals("Board_list")) {
 			action = new BoardListAction();
+		}else if (command.equals("Board_write_form")) {
+			action = new BoardWriteFormAction();
+		}else if (command.equals("Board_write")) {
+			action = new BoardWriteAction();
+		}else if (command.equals("Board_view")) {
+			action = new BoardViewAction();
 		}
 		
 		return action;

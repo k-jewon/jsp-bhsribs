@@ -49,6 +49,7 @@ public class UserDAO {
 			ps.setString(2, pw);
 			rs = ps.executeQuery();
 			if (rs.next()) {
+				uvo.setUid(rs.getInt("uid"));
 				uvo.setEmail(rs.getString("email"));
 				uvo.setName(rs.getString("name"));
 				uvo.setPw(rs.getString("pw"));

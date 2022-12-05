@@ -2,7 +2,7 @@ package com.User.VO;
 
 public class UserVO {
 	private String name, phone, email, pw;
-	private int id, admin;
+	private int uid, admin;
 	public String getName() {
 		return name;
 	}
@@ -27,11 +27,11 @@ public class UserVO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public int getId() {
-		return id;
+	public int getUid() {
+		return uid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 	public int getAdmin() {
 		return admin;
@@ -41,7 +41,7 @@ public class UserVO {
 	}
 	@Override
 	public String toString() {
-		return "UserVO [name=" + name + ", phone=" + phone + ", email=" + email + ", pw=" + pw + ", id=" + id
+		return "UserVO [name=" + name + ", phone=" + phone + ", email=" + email + ", pw=" + pw + ", uid=" + uid
 				+ ", admin=" + admin + "]";
 	}
 	

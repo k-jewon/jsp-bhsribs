@@ -14,9 +14,6 @@
 			$('.menu_bar').toggleClass('active');
 			$('.menu_item').toggleClass('active');
 		});
-		$( '.board_line' ).click( function() {
-            window.location.href = '/Project/View/BoardPage.jsp';
-        } );
 	</script>
 </body>
 </html>
