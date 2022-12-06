@@ -10,19 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.Board.DAO.BoardDAO;
 import com.Board.VO.BoardVO;
 
-
-public class BoardViewAction implements BoardAction {
+public class BoardUpdateFormAction implements BoardAction {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="/Board/BoardView.jsp";
+		String url = "Board/BoardUpdate.jsp";
 		int bid = Integer.parseInt(request.getParameter("bid"));
 		
 		BoardDAO bdao = BoardDAO.getInstance();
 		BoardVO bvo = bdao.selectBoardByBid(bid);
-		bdao.updateReadCount(bid);
 		request.setAttribute("board", bvo);
+		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
-		
 	}
 }

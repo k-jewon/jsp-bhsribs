@@ -263,9 +263,9 @@ footer .logo{
     font-weight: bold;
 }
 .login_input{
-    width:calc(100% - 1px);
+    width:calc(100% - 21px);
     height: 35px;
-    padding: 0;
+    padding: 0 10px;
     border-width: 0;
     border-radius: 5px;
 }
@@ -330,12 +330,13 @@ footer .logo{
     border: 0;
     color: white;
     font-size: 20px;
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     border-radius: 5px;
 }
 .board_list{
-    height: 800px;
+    min-height: 630px;
+    margin-bottom: 40px;
 }
 .board_list .board_header{
     display: flex;
@@ -366,9 +367,18 @@ footer .logo{
     margin-right: 20px;
 }
 
+.board_none{
+	height: 600px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
 .board_write{
 	width: 100%;
-	height: 800px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 
@@ -391,47 +401,47 @@ tbody{
     border-radius: 5px;
 }
 .board_input{
-	width: 100%;
+	width:calc(100% - 20px);
     height: 30px;
-    padding: 0;
+    padding: 0 10px;
     border:2px solid black;
     border-radius: 5px;
 }
 
 .board_write_content{
-	height: 500px;
+	min-height: 500px;
     background: black;
     color: white;
     vertical-align: middle;
     border-radius: 5px;
 }
 .board_input2{
-	width: 100%;
+	width:calc(100% - 20px);
     height: 500px;
-    padding: 0;
+    padding: 10px;
     border:2px solid black;
     border-radius: 5px;
 }
 
 .board_view1{
-	width:100%;
     height: 30px;
-    padding: 0;
+    padding: 0 10px;
     border:2px solid black;
     border-radius: 5px;
     vertical-align: middle;
+    text-align: left;
 }
 .board_view2{
-	width: 35%;
     height: 30px;
-    padding: 0;
+    padding: 0 10px;
     border:2px solid black;
     border-radius: 5px;
     vertical-align: middle;
+    text-align: left;
 }
 .board_view3{
-	height: 500px;
-    padding: 0;
+	min-height: 500px;
+    padding: 10px;
     border:2px solid black;
     border-radius: 5px;
     text-align: left;

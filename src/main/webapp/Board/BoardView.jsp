@@ -3,9 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../Header.jsp"/>
-<c:if test="${empty loginUser }">
-	<% response.sendRedirect("main.do"); %>
-</c:if>
 <div class="container">
 	<div class="page_title">
 		<p class="title">게시글 보기</p>
@@ -18,7 +15,7 @@
 			<table class="board_write_table">
 				<tr class="w-100">
 					<th class="board_write_head">글 제목</th>
-					<td class="board_view1"> ${board.title} </td>
+					<td class="board_view1" colspan="3"> ${board.title} </td>
 				</tr>
 				<tr class="w-100">
 					<th class="board_write_head">작성자</th>
@@ -30,12 +27,21 @@
 				</tr>
 				<tr class="w-100">
 					<th class="board_write_content">내용</th>
-					<td><div class="board_view3">${board.content}</div></td>
+					<td><div class="board_view3" colspan="3">${board.content}</div></td>
 				</tr>
 			</table>
 			<br><br>
-			<input class="write_btn" type="submit" value="작성">
-			<input class="write_btn" type="reset" value="다시 작성">
+			<c:choose>
+				<c:when test="${loginUser.uid == board.uid }">
+					<input class="write_btn" type="button" onclick="location.href='Board?command=Board_update_form&bid=${board.bid}'" value="게시물 수정">
+					<input class="write_btn" type="button" onclick="location.href='Board?command=Board_delete&bid=${board.bid}'" value="게시물 삭제">
+				</c:when>
+				<c:when test="${loginUser.admin == 1 }">
+					<input class="write_btn" type="button" onclick="location.href='Board?command=Board_delete&bid=${board.bid}'" value="게시물 삭제">
+				</c:when>
+			</c:choose>
+			
+			
 			<input class="write_btn" type="button" value="목록" onclick="location.href='Board?command=Board_list'" />
 		</div>
 		

@@ -21,17 +21,25 @@
 			<div>글제목</div>
 			<div>작성날짜</div>
 		</li>
-		<c:forEach var="board" items="${List}">
-			<li class="board_line" onclick="location.href='Board?command=Board_view&bid=${board.bid}'">
-				<div class="board_title">
-					<p class="mb-1">${board.title}</p>
-					<span>${board.name}</span>
-				</div>
-				<div class="board_date">
-					<fmt:formatDate value="${board.write_date}"></fmt:formatDate>
-				</div>
-			</li>
-		</c:forEach>
+		<c:choose>
+			<c:when test="${empty List}">
+				<li class="board_none">게시물이 없습니다	</li>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="board" items="${List}">
+					<li class="board_line" onclick="location.href='Board?command=Board_view&bid=${board.bid}'">
+						<div class="board_title">
+							<p class="mb-1">${board.title}</p>
+							<span>${board.name}</span>
+						</div>
+						<div class="board_date">
+							<fmt:formatDate value="${board.write_date}"></fmt:formatDate>
+						</div>
+					</li>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+		
 	</ul>
 </div>
 <jsp:include page="../Footer.jsp" />
