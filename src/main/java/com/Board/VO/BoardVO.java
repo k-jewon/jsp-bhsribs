@@ -3,7 +3,7 @@ package com.Board.VO;
 import java.util.Date;
 
 public class BoardVO {
-	private int bid, uid;
+	private int bid, uid, readcount;
 	private String title, name, content;
 	private Date write_date;
 	public int getBid() {
@@ -42,11 +42,18 @@ public class BoardVO {
 	public void setWrite_date(Date write_date) {
 		this.write_date = write_date;
 	}
+	public int getReadcount() {
+		return readcount;
+	}
+	public void setReadcount(int readcount) {
+		this.readcount = readcount;
+	}
 	@Override
 	public String toString() {
-		return "BoardVO [bid=" + bid + ", uid=" + uid + ", title=" + title + ", name=" + name + ", content=" + content
-				+ ", write_date=" + write_date + "]";
+		return "BoardVO [bid=" + bid + ", uid=" + uid + ", readcount=" + readcount + ", title=" + title + ", name="
+				+ name + ", content=" + content + ", write_date=" + write_date + "]";
 	}
+	
 	
 	
 }

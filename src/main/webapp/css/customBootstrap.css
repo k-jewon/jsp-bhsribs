@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.page-item.active .page-link{
+	background-color: black;
+	border-color:black;
+}
+.page-link{
+	color:black;
+}
+.pagination{
+	justify-content: center;
+	margin-bottom:2em;
+}

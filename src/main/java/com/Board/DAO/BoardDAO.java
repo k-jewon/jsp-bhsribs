@@ -43,6 +43,57 @@ public class BoardDAO {
 		return list;
 		
 	}
+	//게시판 페이징
+	public List<BoardVO> getBoardList(int pageNum, int amount){
+		List<BoardVO> list = new ArrayList<>();
+		String sql = "select * from board order by bid desc limit ?,?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, (pageNum-1)*10);
+			ps.setInt(2, amount);
+			rs=ps.executeQuery();
+			while(rs.next()){
+				BoardVO bvo = new BoardVO();
+				bvo.setBid(rs.getInt("bid"));
+				bvo.setTitle(rs.getString("title"));
+				bvo.setName(rs.getString("name"));
+				bvo.setContent(rs.getString("content"));
+				bvo.setWrite_date(rs.getDate("write_date"));
+				bvo.setUid(rs.getInt("uid"));
+				list.add(bvo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(rs, ps, conn);
+		}
+		return list;
+	}
+	//게시판 전체글 수
+	public int getTotal() {
+		int result = 0;
+		String sql = "select count(*) as total from board";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt("total");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(rs, ps, conn);
+		}
+		return result;
+	}
 //	
 //	public ArrayList<BoardVO> getBoardList(int startRow, int pageSize) {
 //		String sql = "select * from board order by bid desc limit ?,?";
