@@ -141,6 +141,10 @@ textarea{
     width: 1080px;
     margin: 0 auto;
 }
+.adminPage{
+    width: 90%;
+    margin: 0 auto;
+}
 /* 메뉴소개 */
 
 .img {
@@ -229,8 +233,6 @@ footer{
     height: 100px;
     background: black;
     position: absolute;
-    transform: translateY(100%);
-    margin-top: -100px;
 }
 footer .logo{
     position: absolute;
@@ -415,7 +417,7 @@ tbody{
     border-radius: 5px;
 }
 .board_input2{
-	width:calc(100% - 20px);
+	width:100%;
     height: 500px;
     padding: 10px;
     border:2px solid black;

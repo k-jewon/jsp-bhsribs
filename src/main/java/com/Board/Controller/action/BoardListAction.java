@@ -26,8 +26,7 @@ public class BoardListAction implements BoardAction {
 		
 		List<BoardVO> list = bdao.getBoardList(pageNum, amount);
 		int total = bdao.getTotal();
-		PageVO pvo = new PageVO(pageNum, amount, total);
-		
+		PageVO pvo = new PageVO(pageNum, amount, total);		
 		
 		request.setAttribute("PageVO", pvo);
 		request.setAttribute("List", list);

@@ -10,3 +10,11 @@
 	justify-content: center;
 	margin-bottom:2em;
 }
+.nav-tabs{
+	border-bottom:1px solid #212529;
+}
+.nav-tabs .nav-link.active{
+	border-bottom:1px solid #212529;
+	background: #212529;
+	color:white;
+}
