@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Board.DAO.BoardDAO;
 import com.Board.VO.BoardVO;
+import com.util.Action;
 
-public class BoardUpdateFormAction implements BoardAction {
+public class BoardUpdateFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "Board/BoardUpdate.jsp";

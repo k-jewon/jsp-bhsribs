@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.User.VO.UserVO;
 import com.User.dao.UserDAO;
+import com.util.Action;
 
-public class JoinAction implements UserAction {
+public class JoinAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");

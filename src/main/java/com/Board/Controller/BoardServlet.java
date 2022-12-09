@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.Board.Controller.action.BoardAction;
+
 import com.Board.Controller.BoardActionFactory;
+import com.util.Action;
 
 
 /**
@@ -40,7 +41,7 @@ public class BoardServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
 		BoardActionFactory baf = BoardActionFactory.getInstance();
-		BoardAction action = baf.getAction(command);
+		Action action = baf.getAction(command);
 		if(action != null)
 			action.execute(request, response);
 	}

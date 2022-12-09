@@ -1,6 +1,5 @@
 package com.Board.Controller;
 
-import com.Board.Controller.action.BoardAction;
 import com.Board.Controller.action.BoardDeleteAction;
 import com.Board.Controller.action.BoardListAction;
 import com.Board.Controller.action.BoardUpdateAction;
@@ -8,6 +7,7 @@ import com.Board.Controller.action.BoardUpdateFormAction;
 import com.Board.Controller.action.BoardViewAction;
 import com.Board.Controller.action.BoardWriteAction;
 import com.Board.Controller.action.BoardWriteFormAction;
+import com.util.Action;
 
 public class BoardActionFactory {
 	private BoardActionFactory() {}
@@ -15,8 +15,8 @@ public class BoardActionFactory {
 	public static BoardActionFactory getInstance() {
 		return instance;
 	}
-	public BoardAction getAction(String command) {
-		BoardAction action = null;
+	public Action getAction(String command) {
+		Action action = null;
 		
 		if (command.equals("Board_list")) {
 			action = new BoardListAction();

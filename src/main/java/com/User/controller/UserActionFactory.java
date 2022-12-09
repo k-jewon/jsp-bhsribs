@@ -5,7 +5,8 @@ import com.User.controller.action.JoinFormAction;
 import com.User.controller.action.LoginAction;
 import com.User.controller.action.LoginFormAction;
 import com.User.controller.action.LogoutAction;
-import com.User.controller.action.UserAction;
+import com.util.Action;
+
 
 public class UserActionFactory {
 	private UserActionFactory() {}
@@ -14,8 +15,8 @@ public class UserActionFactory {
 	public static UserActionFactory getInstance() {
 		return instance;
 	}
-	public UserAction getAction(String command) {
-		UserAction action = null;
+	public Action getAction(String command) {
+		Action action = null;
 		if(command.equals("Login_form")) {
 			action = new LoginFormAction();
 		}else if(command.equals("Login")) {

@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.User.controller.action.UserAction;
+import com.util.Action;
+
+
 
 /**
  * Servlet implementation class UserServlet
@@ -38,7 +40,7 @@ public class UserServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
 		UserActionFactory uaf = UserActionFactory.getInstance();
-		UserAction action = uaf.getAction(command);
+		Action action = uaf.getAction(command);
 		if(action != null)
 			action.execute(request, response);
 	}

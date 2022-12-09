@@ -10,9 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Board.DAO.BoardDAO;
 import com.Board.VO.BoardVO;
-import com.Board.VO.PageVO;
+import com.util.Action;
+import com.util.VO.PageVO;
 
-public class BoardListAction implements BoardAction {
+public class BoardListAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "Board/BoardList.jsp";

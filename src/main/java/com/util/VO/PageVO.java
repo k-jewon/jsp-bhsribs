@@ -1,4 +1,4 @@
-package com.Board.VO;
+package com.util.VO;
 
 public class PageVO {
 

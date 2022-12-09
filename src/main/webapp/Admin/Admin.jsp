@@ -28,36 +28,7 @@
 	</ul>
 	<div id="myTabContent" class="tab-content">
 	  <div class="tab-pane fade show active" id="home" role="tabpanel">
-	    <table  class="table table-responsive">
-		  <thead class="table-dark">
-		    <tr>
-		      <th scope="col">예약자 이름</th>
-		      <th scope="col">전화번호</th>
-		      <th scope="col">인원수</th>
-		      <th scope="col">예약시간</th>
-		      <th scope="col">문의사항</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>@fat</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td colspan="2">Larry the Bird</td>
-		      <td>@twitter</td>
-		    </tr>
-		  </tbody>
-		</table>
+	    <jsp:include page="../Book/BookList.jsp"/>
 	  </div>
 	  <div class="tab-pane fade" id="profile" role="tabpanel">
 	    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>

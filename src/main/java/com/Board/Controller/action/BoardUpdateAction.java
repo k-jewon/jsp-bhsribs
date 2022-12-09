@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Board.DAO.BoardDAO;
+import com.util.Action;
 
-public class BoardUpdateAction implements BoardAction {
+public class BoardUpdateAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String title = request.getParameter("title");

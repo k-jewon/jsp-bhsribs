@@ -10,8 +10,9 @@ import javax.servlet.http.HttpSession;
 
 import com.User.VO.UserVO;
 import com.User.dao.UserDAO;
+import com.util.Action;
 
-public class LoginAction implements UserAction {
+public class LoginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

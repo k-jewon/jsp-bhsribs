@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.Board.DAO.BoardDAO;
 import com.Board.VO.BoardVO;
+import com.util.Action;
 
-public class BoardWriteAction implements BoardAction {
+public class BoardWriteAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardVO bvo = new BoardVO();
