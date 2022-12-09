@@ -20,7 +20,7 @@ public class BookWriteAction implements Action {
 		bvo.setPhone(request.getParameter("phone"));
 		bvo.setDays(request.getParameter("days"));
 		bvo.setContent(request.getParameter("content"));
-		bvo.setHowmany(Integer.parseInt(request.getParameter("name")));
+		bvo.setHowmany(Integer.parseInt(request.getParameter("howmany")));
 		
 		BookDAO bdao = BookDAO.getInstance();
 		int result = bdao.InsertBook(bvo);

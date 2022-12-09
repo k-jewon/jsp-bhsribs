@@ -14,7 +14,7 @@ public class BookDAO {
 		return instance;
 	}
 	public int InsertBook(BookVO bvo) {
-		String sql = "insert into booking value (null,?,?,?,?,?)";
+		String sql = "insert into booking values (null,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int result = 0;
