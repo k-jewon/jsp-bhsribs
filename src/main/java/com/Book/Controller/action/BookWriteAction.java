@@ -14,7 +14,7 @@ import com.util.Action;
 public class BookWriteAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-		String url="Main";
+		String url="Book/BookWriteForm.jsp";
 		BookVO bvo = new BookVO();
 		bvo.setName(request.getParameter("name"));
 		bvo.setPhone(request.getParameter("phone"));
