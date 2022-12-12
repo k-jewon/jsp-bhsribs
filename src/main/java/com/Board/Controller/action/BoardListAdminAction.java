@@ -1,4 +1,4 @@
-package com.Book.Controller.action;
+package com.Board.Controller.action;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,32 +8,31 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.Book.DAO.BookDAO;
-import com.Book.VO.BookVO;
+import com.Board.DAO.BoardDAO;
+import com.Board.VO.BoardVO;
 import com.util.Action;
 import com.util.VO.PageVO;
 
-public class BookListAction implements Action{
+public class BoardListAdminAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "Admin/Admin.jsp";
-		String tab = "Book_list";
+		String tab = "Board_list_admin";
 		int pageNum = 1;
 		int amount = 10;
 		if(request.getParameter("pageNum") != null && request.getParameter("amount") != null) {
 			pageNum = Integer.parseInt(request.getParameter("pageNum"));
 			amount = Integer.parseInt(request.getParameter("amount"));
 		}
-		BookDAO bdao = BookDAO.getInstance();
+		BoardDAO bdao = BoardDAO.getInstance();
 		
-		List<BookVO> list = bdao.getBookList(pageNum, amount);
+		List<BoardVO> list = bdao.getBoardList(pageNum, amount);
 		int total = bdao.getTotal();
 		PageVO pvo = new PageVO(pageNum, amount, total);		
 		
 		request.setAttribute("PageVO", pvo);
-		request.setAttribute("Book", list);
+		request.setAttribute("Board", list);
 		request.setAttribute("Tabs", tab);
-		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}

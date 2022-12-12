@@ -2,6 +2,7 @@ package com.Board.Controller;
 
 import com.Board.Controller.action.BoardDeleteAction;
 import com.Board.Controller.action.BoardListAction;
+import com.Board.Controller.action.BoardListAdminAction;
 import com.Board.Controller.action.BoardUpdateAction;
 import com.Board.Controller.action.BoardUpdateFormAction;
 import com.Board.Controller.action.BoardViewAction;
@@ -20,6 +21,8 @@ public class BoardActionFactory {
 		
 		if (command.equals("Board_list")) {
 			action = new BoardListAction();
+		}else if (command.equals("Board_list_admin")) {
+			action = new BoardListAdminAction();
 		}else if (command.equals("Board_write_form")) {
 			action = new BoardWriteFormAction();
 		}else if (command.equals("Board_write")) {

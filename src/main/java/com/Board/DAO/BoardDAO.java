@@ -94,36 +94,7 @@ public class BoardDAO {
 		}
 		return result;
 	}
-//	
-//	public ArrayList<BoardVO> getBoardList(int startRow, int pageSize) {
-//		String sql = "select * from board order by bid desc limit ?,?";
-//		ArrayList<BoardVO> list = new ArrayList<>();
-//		Connection conn = null;
-//		PreparedStatement ps = null;
-//		ResultSet rs = null;
-//		try {
-//			conn = DBManager.getConnection();
-//			ps = conn.prepareStatement(sql);
-//			ps.setInt(1, startRow-1);
-//			ps.setInt(2, pageSize);
-//			rs = ps.executeQuery();
-//			while (rs.next()) {
-//				BoardVO bvo = new BoardVO();
-//				bvo.setBid(rs.getInt("bid"));
-//				bvo.setTitle(rs.getString("title"));
-//				bvo.setName(rs.getString("name"));
-//				bvo.setContent(rs.getString("content"));
-//				bvo.setWrite_date(rs.getDate("write_date"));
-//				bvo.setUid(rs.getInt("uid"));
-//				list.add(bvo);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}finally {
-//			DBManager.close(rs, ps, conn);
-//		}
-//		return list;
-//	}
+
 	//게시물 생성
 	public void insertBoard(BoardVO bvo) {
 		String sql = "insert into board values(null,?,?,?,now(),?,0)";
