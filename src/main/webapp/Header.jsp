@@ -41,7 +41,7 @@
 					<li class="item">${loginUser.name}관리자님 환영합니다</li>
 					<li class="item"><a href="/Project/User?command=Logout">로그아웃</a></li>
 					<li class="item"><a href="/Project/Book?command=Book_list&#home">관리자페이지</a></li>
-					<li class="item"><a href="/Project/Menu/Menu.jsp">메뉴보기</a></li>
+					<li class="item"><a href="/Project/Menu/MenuList.jsp">메뉴보기</a></li>
 					<li class="item"><a href="/Project/Board?command=Board_list">게시판</a></li>
 					<li class="item"><a href="/Project/Book?command=Book_write_form">예약문의</a></li>
 				</ul>

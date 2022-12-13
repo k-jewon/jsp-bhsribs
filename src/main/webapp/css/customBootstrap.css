@@ -18,3 +18,17 @@
 	background: #212529;
 	color:white;
 }
+.nav-tabs .nav-link{
+	color:black;
+}
+.nav-item .nav-link:hover{
+	border-bottom:1px solid black;
+}
+.nav-link:hover{
+	color:white;
+	background: black;
+}
+.dropdown-item:hover{
+	color:white;
+	background: black;
+}

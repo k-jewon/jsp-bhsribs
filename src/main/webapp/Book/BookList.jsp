@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<table class="table table-responsive">
+<table class="table table-responsive board_list">
 	<thead class="table-dark">
 		<tr>
 			<th>예약자 이름</th>
