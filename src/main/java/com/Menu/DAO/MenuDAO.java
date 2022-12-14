@@ -107,4 +107,26 @@ public class MenuDAO {
 		}
 		return list;
 	}
+	//메뉴추가
+	public void insertMenu(MenuVO mvo) {
+		String query = "INSERT INTO MENU (TYPE,NAME,ADDR,PRICE,PRICE_100G,PICTUREURL) VALUES (?,?,?,?,?,?)";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, mvo.getType());
+			ps.setString(2, mvo.getName());
+			ps.setString(3, mvo.getAddr());
+			ps.setInt(4, mvo.getPrice());
+			ps.setInt(5, mvo.getPrice_100g());
+			ps.setString(6, mvo.getPictureurl());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(ps, conn);
+		}
+		
+	}
 }

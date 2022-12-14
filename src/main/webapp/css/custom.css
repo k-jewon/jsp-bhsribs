@@ -38,6 +38,9 @@ textarea{
 .mb-1{
 	margin-bottom: 1em;	
 }
+.none{
+	display: none;
+}
 /* 메뉴 */
 .menu{
     background-color: white;
@@ -319,6 +322,31 @@ footer .logo{
 .menu_list .menu_box p{
     text-align: center;
 }
+.menu_board_list{
+    min-height: 315px;
+    margin-bottom: 40px;
+    background: #212529;
+}
+.menu_title{
+	padding:20px 8px;
+	color:white;
+	background: #212529;
+	font-size:30px;
+}
+.menu_btn{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.menu_write{
+	width: 100%;
+	height:75vh;
+	min-height: 380px;
+	text-align: center;
+}
+
 /* 게시판 */
 .page_title{
     display: flex;
@@ -448,10 +476,7 @@ tbody{
     text-align: left;
 }
 
-.menu_board_list{
-    min-height: 315px;
-    margin-bottom: 40px;
-}
+
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1200px) {
     .container{

@@ -2,10 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<div class="page_title">
-	<p class="title">고기메뉴</p>
-</div>
-<table class="table table-responsive menu_board_list">
+<p class="menu_title">고기메뉴</p>
+<div class="menu_board_list">
+<table class="table table-dark table-striped table-hover">
 	<thead class="table-dark">
 		<tr>
 			<th>메뉴이름</th>
@@ -32,10 +31,10 @@
 		</c:choose>
 	</tbody>
 </table>
-<div class="page_title">
-	<p class="title">식사메뉴</p>
 </div>
-<table class="table table-responsive menu_board_list">
+<p class="menu_title">식사메뉴</p>
+<div class="menu_board_list">
+<table class="table table-dark table-striped table-hover ">
 	<thead class="table-dark">
 		<tr>
 			<th>메뉴이름</th>
@@ -58,6 +57,8 @@
 		</c:choose>
 	</tbody>
 </table>
-<div class="page_title">
-	<button class="write_btn" onclick="location.href='Menu?command=Menu_write_form'">글쓰기</button>
+</div>
+
+<div class="menu_btn">
+	<button class="write_btn" onclick="location.href='Menu?command=Menu_write_form'">메뉴 추가</button>
 </div>
