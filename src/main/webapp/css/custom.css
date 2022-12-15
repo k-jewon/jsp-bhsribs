@@ -328,7 +328,7 @@ footer .logo{
     background: #212529;
 }
 .menu_title{
-	padding:20px 8px;
+	padding:20px;
 	color:white;
 	background: #212529;
 	font-size:30px;
@@ -345,6 +345,13 @@ footer .logo{
 	height:75vh;
 	min-height: 380px;
 	text-align: center;
+}
+.menu_img{
+	width:100%;
+	min-height: 450px;
+	border: 2px solid black;
+    border-radius: 5px;
+    padding:10px;
 }
 
 /* 게시판 */
@@ -475,7 +482,11 @@ tbody{
     border-radius: 5px;
     text-align: left;
 }
-
+.book_board_list{
+    min-height: 630px;
+    margin-bottom: 40px;
+    background: #212529;
+}
 
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1200px) {

@@ -29,30 +29,30 @@
         <c:choose>
         	<c:when test="${empty loginUser}">
 				<ul class="menu_item">
-					<li class="item"><a href="/Project/User?command=Join_form">회원가입</a></li>
-					<li class="item"><a href="/Project/User?command=Login_form">로그인</a></li>
-					<li class="item"><a href="/Project/Menu/Menu.jsp">메뉴보기</a></li>
-					<li class="item"><a href="/Project/Board?command=Board_list">게시판</a></li>
-					<li class="item"><a href="/Project/Book?command=Book_write_form">예약문의</a></li>
+					<li class="item"><a href="User?command=Join_form">회원가입</a></li>
+					<li class="item"><a href="User?command=Login_form">로그인</a></li>
+					<li class="item"><a href="Menu?command=Menu_list">메뉴보기</a></li>
+					<li class="item"><a href="Board?command=Board_list">게시판</a></li>
+					<li class="item"><a href="Book?command=Book_write_form">예약문의</a></li>
 				</ul>
 			</c:when>
 			<c:when test="${loginUser.admin == 1}">
 				<ul class="menu_item">
 					<li class="item">${loginUser.name}관리자님 환영합니다</li>
-					<li class="item"><a href="/Project/User?command=Logout">로그아웃</a></li>
-					<li class="item"><a href="/Project/Book?command=Book_list&#home">관리자페이지</a></li>
-					<li class="item"><a href="/Project/Menu/MenuList.jsp">메뉴보기</a></li>
-					<li class="item"><a href="/Project/Board?command=Board_list">게시판</a></li>
-					<li class="item"><a href="/Project/Book?command=Book_write_form">예약문의</a></li>
+					<li class="item"><a href="User?command=Logout">로그아웃</a></li>
+					<li class="item"><a href="Book?command=Book_list&#home">관리자페이지</a></li>
+					<li class="item"><a href="Menu?command=Menu_list">메뉴보기</a></li>
+					<li class="item"><a href="Board?command=Board_list">게시판</a></li>
+					<li class="item"><a href="Book?command=Book_write_form">예약문의</a></li>
 				</ul>
 			</c:when>
         	<c:when test="${loginUser.admin == 0}">
 				<ul class="menu_item">
 					<li class="item">${loginUser.name}님 환영합니다</li>
-					<li class="item"><a href="/Project/User?command=Logout">로그아웃</a></li>
-					<li class="item"><a href="/Project/Menu/Menu.jsp">메뉴보기</a></li>
-					<li class="item"><a href="/Project/Board?command=Board_list">게시판</a></li>
-					<li class="item"><a href="/Project/Book?command=Book_write_form">예약문의</a></li>
+					<li class="item"><a href="User?command=Logout">로그아웃</a></li>
+					<li class="item"><a href="Menu?command=Menu_list">메뉴보기</a></li>
+					<li class="item"><a href="Board?command=Board_list">게시판</a></li>
+					<li class="item"><a href="Book?command=Book_write_form">예약문의</a></li>
 				</ul>
 			</c:when>
         </c:choose>

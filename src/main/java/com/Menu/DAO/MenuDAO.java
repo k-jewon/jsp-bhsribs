@@ -107,7 +107,37 @@ public class MenuDAO {
 		}
 		return list;
 	}
-	//메뉴추가
+
+	// 고기메뉴 검색
+	public MenuVO selectOneMenu(int mid) {
+		String query = "SELECT * FROM MENU WHERE MID=?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		MenuVO mvo = new MenuVO();
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, mid);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				mvo.setMid(rs.getInt("mid"));
+				mvo.setType(rs.getInt("type"));
+				mvo.setName(rs.getString("name"));
+				mvo.setPrice(rs.getInt("price"));
+				mvo.setAddr(rs.getString("addr"));
+				mvo.setPrice_100g(rs.getInt("price_100g"));
+				mvo.setPictureurl(rs.getString("pictureurl"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(rs, ps, conn);
+		}
+		return mvo;
+	}
+
+	// 메뉴추가
 	public void insertMenu(MenuVO mvo) {
 		String query = "INSERT INTO MENU (TYPE,NAME,ADDR,PRICE,PRICE_100G,PICTUREURL) VALUES (?,?,?,?,?,?)";
 		Connection conn = null;
@@ -124,9 +154,51 @@ public class MenuDAO {
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.close(ps, conn);
 		}
-		
+
 	}
+
+	// 메뉴 수정
+	public void updateMenu(MenuVO mvo) {
+		String query = "UPDATE MENU SET TYPE=?, PRICE=?, PRICE_100G=?, NAME=?, ADDR=?, PICTUREURL=? WHERE MID=?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, mvo.getType());
+			ps.setInt(2, mvo.getPrice());
+			ps.setInt(3, mvo.getPrice_100g());
+			ps.setString(4, mvo.getName());
+			ps.setString(5, mvo.getAddr());
+			ps.setString(6, mvo.getPictureurl());
+			ps.setInt(7, mvo.getMid());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, conn);
+		}
+
+	}
+
+	// 메뉴 삭제
+	public void deleteMenu(int mid) {
+		String query = "DELETE FROM MENU WHERE MID=?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, mid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, conn);
+		}
+	}
+
 }

@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../Header.jsp"/>
 <c:if test="${empty loginUser }">
-	<% response.sendRedirect("/Main"); %>
+	<% response.sendRedirect("Main"); %>
 </c:if>
 <div class="container">
 	<div class="page_title">

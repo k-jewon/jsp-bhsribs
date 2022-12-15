@@ -8,58 +8,51 @@
 	<ul class="nav nav-tabs" role="tablist">
 		<c:choose>
 			<c:when test="${Tabs == 'Book_list'}">
-				<li class="nav-item" role="presentation">
-					<a class="nav-link active" data-bs-toggle="tab"
-						onclick="location.href='/Project/Book?command=Book_list'"
-						aria-selected="true" role="tab">예약 현황</a>
-				</li>
+				<li class="nav-item" role="presentation"><a
+					class="nav-link active" data-bs-toggle="tab"
+					onclick="location.href='Book?command=Book_list'"
+					aria-selected="true" role="tab">예약 현황</a></li>
 			</c:when>
 			<c:otherwise>
-				<li class="nav-item" role="presentation">
-					<a class="nav-link" data-bs-toggle="tab"
-						onclick="location.href='/Project/Book?command=Book_list'"
-						aria-selected="true" role="tab">예약 현황</a>
-				</li>
+				<li class="nav-item" role="presentation"><a class="nav-link"
+					data-bs-toggle="tab"
+					onclick="location.href='Book?command=Book_list'"
+					aria-selected="true" role="tab">예약 현황</a></li>
 			</c:otherwise>
 		</c:choose>
 
 		<c:choose>
 			<c:when test="${Tabs == 'Menu_list_admin'}">
-				<li class="nav-item" role="presentation">
-					<a class="nav-link active"
-						data-bs-toggle="tab" 
-						onclick="location.href='/Project/Menu?command=Menu_list_admin'"
-	 					aria-selected="false"
-						tabindex="-1" role="tab">메뉴관리</a>
-				</li>
+				<li class="nav-item" role="presentation"><a
+					class="nav-link active" data-bs-toggle="tab"
+					onclick="location.href='Menu?command=Menu_list_admin'"
+					aria-selected="false" tabindex="-1" role="tab">메뉴관리</a></li>
 			</c:when>
 			<c:otherwise>
-				<li class="nav-item" role="presentation">
-					<a class="nav-link"
-						data-bs-toggle="tab" 
-						onclick="location.href='/Project/Menu?command=Menu_list_admin'"
-	 					aria-selected="false"
-						tabindex="-1" role="tab">메뉴관리</a>
-				</li>
+				<li class="nav-item" role="presentation"><a class="nav-link"
+					data-bs-toggle="tab"
+					onclick="location.href='Menu?command=Menu_list_admin'"
+					aria-selected="false" tabindex="-1" role="tab">메뉴관리</a></li>
 			</c:otherwise>
 		</c:choose>
-		
+
 		<!-- <li class="nav-item" role="presentation">
 			<a class="nav-link"
 			href="#" aria-selected="false" tabindex="-1" role="tab">Disabled</a>
 		</li>-->
 		<c:choose>
 			<c:when test="${Tabs == 'Board_list_admin'}">
-				<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle active" href="#" role="button"
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle active" href="#" role="button"
 					id="dropdownMenuLink" data-bs-toggle="dropdown"
 					aria-expanded="false"> 인기 게시물 </a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item"
-							onclick="location.href='/Project/Board?command=Board_list_admin'">일별
+							onclick="location.href='Board?command=Board_list_admin&date=day'">일별
 								인기게시물</a></li>
-						<li><a class="dropdown-item" href="#dropdown2">월별 인기게시물</a></li>
-						<li><a class="dropdown-item" href="#">신고게시물</a></li>
+						<li><a class="dropdown-item"
+							onclick="location.href='Board?command=Board_list_admin&date=month'">월별
+								인기게시물</a></li>
 					</ul>
 				</li>
 			</c:when>
@@ -70,9 +63,11 @@
 					aria-expanded="false"> 인기 게시물 </a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item"
-							onclick="location.href='/Project/Board?command=Board_list_admin'">일별
+							onclick="location.href='Board?command=Board_list_admin'">일별
 								인기게시물</a></li>
-						<li><a class="dropdown-item" href="#dropdown2">월별 인기게시물</a></li>
+						<li><a class="dropdown-item"
+							onclick="location.href='Board?command=Board_list_admin&date=month'">월별
+								인기게시물</a></li>
 						<li><a class="dropdown-item" href="#">신고게시물</a></li>
 					</ul></li>
 			</c:otherwise>
@@ -95,16 +90,16 @@
 		<c:choose>
 			<c:when test="${Tabs == 'Menu_list_admin' }">
 				<div class="tab-pane fade show active" role="tabpanel">
-					<jsp:include page="../Menu/MenuListAdmin.jsp"/>
+					<jsp:include page="../Menu/MenuListAdmin.jsp" />
 				</div>
 			</c:when>
 			<c:otherwise>
 				<div class="tab-pane fade" role="tabpanel">
-					<jsp:include page="../Menu/MenuListAdmin.jsp"/>
+					<jsp:include page="../Menu/MenuListAdmin.jsp" />
 				</div>
 			</c:otherwise>
 		</c:choose>
-		
+
 		<c:choose>
 			<c:when test="${Tabs == 'Board_list_admin'}">
 				<div class="tab-pane fade show active" role="tabpanel">

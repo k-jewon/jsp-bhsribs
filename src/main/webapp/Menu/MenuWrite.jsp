@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="../Header.jsp"/>
 <c:if test="${empty loginUser }">
-	<% response.sendRedirect("/Main"); %>
+	<% response.sendRedirect("Main"); %>
 </c:if>
 <div class="container">
 	<div class="page_title">
@@ -51,18 +51,4 @@
 	</form>
 	
 </div>
-<script>
-var selectChange = function(value){
-	if(value == 1){
-		$('.100g').removeClass('none');
-		$('#100g').attr('value','');
-		$('#addr').attr('value','');
-	} else if (value == 2 ){
-		$('.100g').addClass('none');
-		$('#100g').attr('value','0');
-		$('#addr').attr('value','해당없음');
-	}
-	
-}
-</script>
 <jsp:include page="../Footer.jsp"/>

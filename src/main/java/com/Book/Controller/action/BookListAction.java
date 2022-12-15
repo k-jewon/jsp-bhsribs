@@ -18,19 +18,10 @@ public class BookListAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "Admin/Admin.jsp";
 		String tab = "Book_list";
-		int pageNum = 1;
-		int amount = 10;
-		if(request.getParameter("pageNum") != null && request.getParameter("amount") != null) {
-			pageNum = Integer.parseInt(request.getParameter("pageNum"));
-			amount = Integer.parseInt(request.getParameter("amount"));
-		}
+
 		BookDAO bdao = BookDAO.getInstance();
-		
-		List<BookVO> list = bdao.getBookList(pageNum, amount);
-		int total = bdao.getTotal();
-		PageVO pvo = new PageVO(pageNum, amount, total);		
-		
-		request.setAttribute("PageVO", pvo);
+		List<BookVO> list = bdao.selectBook();
+
 		request.setAttribute("Book", list);
 		request.setAttribute("Tabs", tab);
 		

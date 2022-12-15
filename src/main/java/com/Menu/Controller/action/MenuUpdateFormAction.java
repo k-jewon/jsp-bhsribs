@@ -1,7 +1,6 @@
 package com.Menu.Controller.action;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,18 +11,14 @@ import com.Menu.DAO.MenuDAO;
 import com.Menu.VO.MenuVO;
 import com.util.Action;
 
-public class MenuListAction implements Action {
+public class MenuUpdateFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "Menu/MenuList.jsp";
-		
+		String url ="Menu/MenuUpdate.jsp";
+		int mid = Integer.parseInt(request.getParameter("mid"));
 		MenuDAO mdao = MenuDAO.getInstance();
-		List<MenuVO> Meet = mdao.selectMeetMenu();
-		request.setAttribute("Meet", Meet);
-		
-		List<MenuVO> Meal = mdao.selectMealMenu();
-		request.setAttribute("Meal", Meal);
-		
+		MenuVO mvo = mdao.selectOneMenu(mid);
+		request.setAttribute("Menu", mvo);
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);

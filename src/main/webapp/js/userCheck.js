@@ -47,3 +47,15 @@ function joinCheck(){
 	return true;
 
 }
+var selectChange = function(value){
+	if(value == 1){
+		$('.100g').removeClass('none');
+		$('#100g').attr('value','');
+		$('#addr').attr('value','');
+	} else if (value == 2 ){
+		$('.100g').addClass('none');
+		$('#100g').attr('value','0');
+		$('#addr').attr('value','해당없음');
+	}
+	
+}
