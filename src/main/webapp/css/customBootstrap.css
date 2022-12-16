@@ -11,7 +11,7 @@
 	margin-bottom:2em;
 }
 .nav-tabs{
-	border-bottom:1px solid #212529;
+	border-bottom:none;
 }
 .nav-tabs .nav-link.active{
 	border-bottom:1px solid #212529;
@@ -28,7 +28,23 @@
 	color:white;
 	background: black;
 }
-.dropdown-item:hover{
+.dropdown-item{
 	color:white;
-	background: black;
+	background: #212529;
+}
+.dropdown-item:hover{
+	background: gray;
+}
+.dropdown-menu{
+	background: #212529;
+}
+thead{
+	position: sticky;
+    top: 0;
+}
+th{
+	text-align: center;
+}
+td{
+	text-align: center;
 }

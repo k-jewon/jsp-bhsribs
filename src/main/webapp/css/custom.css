@@ -35,13 +35,16 @@ textarea{
 .w-100{
 	width:100%;
 }
+.h-100{
+	width:100%;
+}
 .mb-1{
 	margin-bottom: 1em;	
 }
 .none{
 	display: none;
 }
-/* 메뉴 */
+/*header 메뉴 */
 .menu{
     background-color: white;
     width: 100%;
@@ -77,16 +80,18 @@ textarea{
 .menu .menu_item .item{
     color: black;
     display: inline-block;
-    cursor: pointer;
 }
 .menu .menu_item .item a{
     font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 .menu .menu_item .item a:visited,
 .menu .menu_item .item a:link,
-.menu .menu_item .item a:hover,
 .menu .menu_item .item a:active{
     color: black;
+}
+.menu .menu_item .item a:hover{
+	font-weight:bold;
 }
 
 /* 첫번째 슬라이드 */
@@ -150,18 +155,19 @@ textarea{
 }
 /* 메뉴소개 */
 
-.img {
+.img, .main_img {
     margin: 0 auto;
     width: 330px;
     height: 330px;
     overflow: hidden;
-    transition: 0.3s;
+    position:relative;
     border-radius: 10px;
 }
 .content1{
     position: relative;
 }
-.content1 .content1_item img:hover {
+.content1 .content1_item img:hover,
+.main_img img:hover {
     transform: scale(1.2);
 }
 .content1 .content1_item p{
@@ -316,14 +322,40 @@ footer .logo{
     margin: 0 1%;
     float: left;
 }
-.menu_list .menu_box img:hover {
+.menu_list_img{
+	width:100%;
+	height:100%;
+	transition: 0.3s;
+}
+.menu_list .menu_box .img:hover img,
+.main_img:hover img {
     transform: scale(1.2);
+}
+.hover_text{
+	margin: 0;
+	top:0;
+    width: 330px;
+    height: 330px;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    transition: 0.3s;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+}
+.menu_list .menu_box .img:hover .hover_text,
+.main_img:hover .hover_text {
+    opacity:1;
 }
 .menu_list .menu_box p{
     text-align: center;
 }
 .menu_board_list{
-    min-height: 315px;
+    height: 315px;
+    overflow:auto;
     margin-bottom: 40px;
     background: #212529;
 }
@@ -354,6 +386,7 @@ footer .logo{
     padding:10px;
 }
 
+
 /* 게시판 */
 .page_title{
     display: flex;
@@ -379,7 +412,7 @@ footer .logo{
     justify-content: space-between;
     align-items: center;
     height: 30px;
-    background: black;
+    background: #212529;
     color:white;
     padding: 0 30px;
     border-top-right-radius: 10px;
@@ -487,17 +520,102 @@ tbody{
     margin-bottom: 40px;
     background: #212529;
 }
+.book_none{
+	height: 600px;
+    border-bottom: 1px solid black;
+    vertical-align:middle;
+    text-align:center;
+    font-size: 40px;
+}
 
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1200px) {
     .container{
         width: 100%;
     }
+        /*모바일 메뉴 */
+    .menu{
+        background-color: white;
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        z-index: 10;
+        display: flow-root;
+    }
+    .menu .logo{
+        color: black;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+    }
+    .logo a{
+        font-size: 25px;
+    }
+    .menu_bar{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+    }
+    .menu_line1,
+    .menu_line2,
+    .menu_line3{
+        height: 4px;
+        margin-bottom: 7px;
+        background-color: black;
+        transition: 0.5s;
+        border-radius:10px
+    }
+    .menu_bar.active .menu_line1{
+        transform: rotateZ(45deg);
+        margin-top: 13px;
+    }
+    .menu_bar.active .menu_line2{
+        transform: rotateZ(135deg);
+        margin-top: -11px;
+    }
+    .menu_bar.active .menu_line3{
+        display: none;
+    }
+    .menu .menu_item {
+        top: 60px;
+        right: 0;
+        position: absolute;
+        transform: translateY(-130%);
+        width: 100%;
+        background-color: white;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .menu .menu_item.active {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    .menu .menu_item .item{
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid black;
+        color: black;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .menu .menu_item .item:last-child{
+    	border-bottom:1px solid black;
+    }
+    
     .menu_box{
         width: 45%;
         height: 45%;
         margin: 0 1%;
         float: left;
+    }
+    .img, .hover_text, .main_img{
+    	width:250px;
+    	height:250px;
     }
     .prev_btn,
     .next_btn{
@@ -622,12 +740,24 @@ tbody{
         transform: translate(-50%, -50%);
         background: lightgray;
     }
-    .menu_box .img {
+    .img {
         margin: 0 auto;
         width: 100%;
         height: 180px;
         overflow: hidden;
         transition: 0.3s;
+    }
+    .main_img {
+        width: 70%;
+        height: 360px;
+    }
+    .hover_text{
+    	width: 100%;
+        height: 180px;
+    }
+    .main_img .hover_text{
+    	width: 100%;
+        height: 360px;
     }
 
     .menu_box{

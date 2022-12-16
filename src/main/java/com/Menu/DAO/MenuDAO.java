@@ -49,6 +49,36 @@ public class MenuDAO {
 		return list;
 	}
 
+	// 랜덤메뉴 검색
+	public List<MenuVO> RandomMenu() {
+		String query = "SELECT * FROM MENU ORDER BY RAND() LIMIT 5";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<MenuVO> list = new ArrayList<>();
+		try {
+			conn = DBManager.getConnection();
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				MenuVO mvo = new MenuVO();
+				mvo.setMid(rs.getInt("mid"));
+				mvo.setType(rs.getInt("type"));
+				mvo.setName(rs.getString("name"));
+				mvo.setPrice(rs.getInt("price"));
+				mvo.setAddr(rs.getString("addr"));
+				mvo.setPrice_100g(rs.getInt("price_100g"));
+				mvo.setPictureurl(rs.getString("pictureurl"));
+				list.add(mvo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(rs, ps, conn);
+		}
+		return list;
+	}
+
 	// 고기메뉴 검색
 	public List<MenuVO> selectMeetMenu() {
 		String query = "SELECT * FROM MENU WHERE TYPE=1";

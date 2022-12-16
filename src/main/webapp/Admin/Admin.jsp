@@ -63,7 +63,7 @@
 					aria-expanded="false"> 인기 게시물 </a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<li><a class="dropdown-item"
-							onclick="location.href='Board?command=Board_list_admin'">일별
+							onclick="location.href='Board?command=Board_list_admin&date=day'">일별
 								인기게시물</a></li>
 						<li><a class="dropdown-item"
 							onclick="location.href='Board?command=Board_list_admin&date=month'">월별

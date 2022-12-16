@@ -6,10 +6,11 @@
 <table class="table table-dark table-striped table-hover">
 	<thead class="table-dark">
 		<tr>
-			<th class="text-center">메뉴이름</th>
-			<th class="text-center">원산지</th>
-			<th class="text-center">가격</th>
-			<th class="text-center">100g당 가격</th>
+			<th>메뉴이름</th>
+			<th>원산지</th>
+			<th>가격</th>
+			<th>100g당 가격</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -37,8 +38,9 @@
 <table class="table table-dark table-striped table-hover ">
 	<thead class="table-dark">
 		<tr>
-			<th class="text-center">메뉴이름</th>
-			<th class="text-center">가격</th>
+			<th>메뉴이름</th>
+			<th>가격</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -49,9 +51,9 @@
 			<c:otherwise>
 				<c:forEach var="meal" items="${Meal}">
 					<tr>
-						<td class="text-center">${meal.name}</td>
-						<td class="text-center">${meal.price}</td>
-						<td class="text-center"><button class="btn btn-secondary" onclick="location.href='Menu?command=Menu_update_form&mid=${meal.mid}'">수정</button></td>
+						<td>${meal.name}</td>
+						<td>${meal.price}</td>
+						<td><button class="btn btn-secondary" onclick="location.href='Menu?command=Menu_update_form&mid=${meal.mid}'">수정</button></td>
 					</tr>
 				</c:forEach>
 			</c:otherwise>

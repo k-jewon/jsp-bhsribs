@@ -1,6 +1,7 @@
 package com.Board.Controller.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -18,6 +19,7 @@ public class BoardListAdminAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "Admin/Admin.jsp";
 		String tab = "Board_list_admin";
+		String date = request.getParameter("date");
 		int pageNum = 1;
 		int amount = 10;
 		if(request.getParameter("pageNum") != null && request.getParameter("amount") != null) {
@@ -25,14 +27,20 @@ public class BoardListAdminAction implements Action {
 			amount = Integer.parseInt(request.getParameter("amount"));
 		}
 		BoardDAO bdao = BoardDAO.getInstance();
+		if(date.equals("day") ) {
+			List<BoardVO> list = bdao.getBoardListDay(pageNum, amount);
+			request.setAttribute("Board", list);
+		}else if(date.equals("month")) {
+			List<BoardVO> list = bdao.getBoardListMonth(pageNum, amount);
+			request.setAttribute("Board", list);
+		}
 		
-		List<BoardVO> list = bdao.getBoardList(pageNum, amount);
 		int total = bdao.getTotal();
 		PageVO pvo = new PageVO(pageNum, amount, total);		
 		
 		request.setAttribute("PageVO", pvo);
-		request.setAttribute("Board", list);
 		request.setAttribute("Tabs", tab);
+		request.setAttribute("Date", date);
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}

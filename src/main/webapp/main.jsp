@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<jsp:include page="Header.jsp" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:include page="Header.jsp" />
 	<header class="main_header">
 		<div class="slider">
 			<div class="slide1">
@@ -16,40 +17,23 @@
 	</header>
 	<div class="container">
 		<h2 style="position: relative;" class="title">
-			메뉴소개 <a class="plus" href="/Project/View/Menu.jsp">+ 더보기</a>
+			메뉴소개 <a class="plus" href="Menu?command=Menu_list">+ 전체보기</a>
 		</h2>
 		<div class="content1">
 			<div class="slider2">
+			<c:forEach var="menu" items="${Menu}">
 				<div class="content1_item">
-					<div class="img">
-						<img class="img" src="images/간장숯불닭갈비.jpeg">
-					</div>
-					<p class="title2">간장 숯불 닭갈비</p>
+					<div class="main_img">
+	                	<img class="menu_list_img" src="images/${menu.pictureurl}">
+	                	<div class="hover_text">
+		                	<div>
+			                	<p>가격 : ${menu.price} 원</p>
+		                	</div>
+	                	</div>
+	                </div>
+	                <p class="title2">${menu.name}</p>
 				</div>
-				<div class="content1_item">
-					<div class="img">
-						<img class="img" src="images/매운숯불닭갈비.jpg">
-					</div>
-					<p class="title2">매운 숯불 닭갈비</p>
-				</div>
-				<div class="content1_item">
-					<div class="img">
-						<img class="img" src="images/수제양념돼지갈비.png">
-					</div>
-					<p class="title2">수제 양념돼지갈비</p>
-				</div>
-				<div class="content1_item">
-					<div class="img">
-						<img class="img" src="images/생삼겹살.jpg">
-					</div>
-					<p class="title2">생 삼겹살</p>
-				</div>
-				<div class="content1_item">
-					<div class="img">
-						<img class="img" src="images/할매비빔국수.jpg">
-					</div>
-					<p class="title2">할매 비빔국수</p>
-				</div>
+			</c:forEach>	
 			</div>
 
 			<button class="prev_btn">

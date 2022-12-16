@@ -27,11 +27,13 @@
 		</c:otherwise>
 	</c:choose>
 </ul>
+<c:choose>
+<c:when test="${Date == 'day'}">
 <ul class="pagination">
 	<c:choose>
 		<c:when test="${PageVO.prev}">
 			<li class="page-item"><a class="page-link"
-				href="Board?command=Board_list_admin&pageNum=${PageVO.startPage - 1 }&amount=${PageVO.amount}"><i
+				href="Board?command=Board_list_admin&pageNum=${PageVO.startPage - 1 }&amount=${PageVO.amount}&date=day"><i
 					class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
 		</c:when>
 		<c:otherwise>
@@ -44,14 +46,14 @@
 		end="${PageVO.endPage}">
 		<li class="page-item ${PageVO.pageNum eq num ? 'active' : '' }">
 			<a class="page-link"
-			href="Board?command=Board_list_admin&pageNum=${num }&amount=${PageVO.amount}">${num}</a>
+			href="Board?command=Board_list_admin&pageNum=${num }&amount=${PageVO.amount}&date=day">${num}</a>
 		</li>
 	</c:forEach>
 
 	<c:choose>
 		<c:when test="${PageVO.next}">
 			<li class="page-item"><a class="page-link"
-				href="Board?command=Board_list_admin&pageNum=${PageVO.endPage + 1 }&amount=${PageVO.amount}"><i
+				href="Board?command=Board_list_admin&pageNum=${PageVO.endPage + 1 }&amount=${PageVO.amount}&date=day"><i
 					class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
 		</c:when>
 		<c:otherwise>
@@ -59,5 +61,41 @@
 					class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
 		</c:otherwise>
 	</c:choose>
-
 </ul>
+</c:when>
+<c:when test="${Date == 'month'}">
+<ul class="pagination">
+	<c:choose>
+		<c:when test="${PageVO.prev}">
+			<li class="page-item"><a class="page-link"
+				href="Board?command=Board_list_admin&pageNum=${PageVO.startPage - 1 }&amount=${PageVO.amount}&date=month"><i
+					class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+		</c:when>
+		<c:otherwise>
+			<li class="page-item disabled"><a class="page-link" href="#"><i
+					class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+		</c:otherwise>
+	</c:choose>
+
+	<c:forEach var="num" begin="${PageVO.startPage}"
+		end="${PageVO.endPage}">
+		<li class="page-item ${PageVO.pageNum eq num ? 'active' : '' }">
+			<a class="page-link"
+			href="Board?command=Board_list_admin&pageNum=${num }&amount=${PageVO.amount}&date=month">${num}</a>
+		</li>
+	</c:forEach>
+
+	<c:choose>
+		<c:when test="${PageVO.next}">
+			<li class="page-item"><a class="page-link"
+				href="Board?command=Board_list_admin&pageNum=${PageVO.endPage + 1 }&amount=${PageVO.amount}&date=month"><i
+					class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+		</c:when>
+		<c:otherwise>
+			<li class="page-item disabled"><a class="page-link" href="#"><i
+					class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+		</c:otherwise>
+	</c:choose>
+</ul>
+</c:when>
+</c:choose>

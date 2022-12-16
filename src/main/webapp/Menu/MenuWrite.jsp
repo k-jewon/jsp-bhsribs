@@ -39,11 +39,11 @@
 				</tr>				
 				<tr class="w-100">
 					<th class="board_write_head">메뉴 사진</th>
-					<td> <input class="board_input" type="file" name="pictureurl"> </td>
+					<td> <input class="board_input" type="file" id="pic" name="pictureurl"> </td>
 				</tr>
 			</table>
 			<br><br>
-			<input class="write_btn" type="submit" value="작성">
+			<input class="write_btn" type="submit" value="작성" onclick="return menuCheck()">
 			<input class="write_btn" type="reset" value="다시 작성">
 			<input class="write_btn" type="button" value="목록" onclick="location.href='Menu?command=Menu_list_admin'" />
 		</div>

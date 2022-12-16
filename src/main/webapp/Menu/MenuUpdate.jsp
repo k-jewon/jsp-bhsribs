@@ -48,7 +48,7 @@
 				</tr>				
 				<tr class="w-100">
 					<th class="board_write_head">메뉴 사진</th>
-					<td> <input class="board_input" type="file" name="pictureurl" value="${Menu.pictureurl}"> </td>
+					<td> <input class="board_input" type="file" id="pic" name="pictureurl" value="${Menu.pictureurl}"> </td>
 				</tr>
 				<tr class="w-100">
 					<th class="board_write_head">현재 메뉴 사진</th>
@@ -66,10 +66,10 @@
 				</tr>
 			</table>
 			<br><br>
-			<input class="write_btn" type="submit" value="메뉴 수정">
+			<input class="write_btn" type="submit" value="메뉴 수정" onclick="return menuUpdateCheck()">
 			<input class="write_btn" type="reset" value="다시 작성">
 			<input class="write_btn" type="button" value="목록" onclick="location.href='Menu?command=Menu_list_admin'" />
-			<input class="write_btn" type="button" value="메뉴 삭제" onclick="location.href='Menu?command=Menu_delete$mid=${Menu.mid}'" />
+			<input class="write_btn" type="button" value="메뉴 삭제" onclick="location.href='Menu?command=Menu_delete&mid=${Menu.mid}'" />
 		</div>
 		
 	</form>
