@@ -29,16 +29,19 @@ public class BoardListAdminAction implements Action {
 		BoardDAO bdao = BoardDAO.getInstance();
 		if(date.equals("day") ) {
 			List<BoardVO> list = bdao.getBoardListDay(pageNum, amount);
+			int total = bdao.getTotalDay();
+			PageVO pvo = new PageVO(pageNum, amount, total);		
 			request.setAttribute("Board", list);
+			request.setAttribute("PageVO", pvo);
+			
 		}else if(date.equals("month")) {
 			List<BoardVO> list = bdao.getBoardListMonth(pageNum, amount);
+			int total = bdao.getTotalMonth();
+			PageVO pvo = new PageVO(pageNum, amount, total);
 			request.setAttribute("Board", list);
+			request.setAttribute("PageVO", pvo);
 		}
 		
-		int total = bdao.getTotal();
-		PageVO pvo = new PageVO(pageNum, amount, total);		
-		
-		request.setAttribute("PageVO", pvo);
 		request.setAttribute("Tabs", tab);
 		request.setAttribute("Date", date);
 		RequestDispatcher rd = request.getRequestDispatcher(url);

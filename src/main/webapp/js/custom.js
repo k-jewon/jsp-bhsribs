@@ -71,7 +71,6 @@ function menuCheck(){
 		return false;
 	}else if(document.getElementById("pic").files.length == 0) {
       alert("메뉴 사진을 넣어주십시요");
-      Menu_form.file.focus();
       return false;
 	}else{
 		return true;	
@@ -97,10 +96,9 @@ function menuUpdateCheck(){
 		return false;
 	}else if(document.getElementById("pic").files.length == 0) {
       alert("메뉴 사진을 넣어주십시요");
-      Menu_update_form.file.focus();
       return false;
-	}else{
-		return true;	
+	}else {
+		return true;
 	}
 }
 

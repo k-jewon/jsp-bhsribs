@@ -156,6 +156,48 @@ public class BoardDAO {
 		}
 		return result;
 	}
+	//게시판 하루글 수
+		public int getTotalDay() {
+			int result = 0;
+			String sql = "select count(*) as total from board WHERE DATE(write_date) = DATE_FORMAT(CURDATE(),'%Y-%m-%d')";
+			Connection conn = null;
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			try {
+				conn = DBManager.getConnection();
+				ps = conn.prepareStatement(sql);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					result = rs.getInt("total");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(rs, ps, conn);
+			}
+			return result;
+		}
+		//게시판 하루글 수
+				public int getTotalMonth() {
+					int result = 0;
+					String sql = "select count(*) as total from board WHERE write_date BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH ) AND NOW()";
+					Connection conn = null;
+					PreparedStatement ps = null;
+					ResultSet rs = null;
+					try {
+						conn = DBManager.getConnection();
+						ps = conn.prepareStatement(sql);
+						rs = ps.executeQuery();
+						if(rs.next()) {
+							result = rs.getInt("total");
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}finally {
+						DBManager.close(rs, ps, conn);
+					}
+					return result;
+				}
 
 	//게시물 생성
 	public void insertBoard(BoardVO bvo) {

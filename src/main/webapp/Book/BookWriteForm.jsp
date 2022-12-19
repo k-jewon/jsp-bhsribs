@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="../Header.jsp" />
-<form class="page" method="post" action="Book" name="book_form">
+<form class="page" method="post" action="Book" name="book_form" autocomplete="off">
 <input type="hidden" name="command" value="Book_write">
 	<div class="login_page">
 		<p class="title text-center">예약 문의</p>

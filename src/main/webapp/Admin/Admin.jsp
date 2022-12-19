@@ -3,6 +3,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="../Header.jsp" />
+<c:if test="${empty loginUser }">
+	<% response.sendRedirect("Main"); %>
+</c:if>
+<c:if test="${loginUser.admin == 0}">
+	<% response.sendRedirect("Main"); %>
+</c:if>
 <div class="adminPage">
 	<h2 style="margin-top: 100px;" class="title">관리자 페이지</h2>
 	<ul class="nav nav-tabs" role="tablist">
