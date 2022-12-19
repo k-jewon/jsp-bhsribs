@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="../Header.jsp" />
 
-<form method="post" action="User" class="page" name="join_form">
+<form method="post" action="User" class="page" name="join_form" autocomplete="off">
 	<input type="hidden" name="command" value="Join">
 	<div class="login_page">
         <p class="title text-center">회원가입</p>

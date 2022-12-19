@@ -25,16 +25,16 @@ public class LoginAction implements Action {
 		
 		UserDAO udao = UserDAO.getInstance();
 		UserVO uvo = udao.loginUser(email, pw);
-		
-		if(uvo!=null) {
+		String fail = "로그인에 실패하였습니다 \n 로그인정보를 다시 확인해주세요";
+		if(uvo.getEmail()!=null) {
 			url = "index.jsp";
 			session.setAttribute("loginUser", uvo);
-		}else {
-			request.setAttribute("message", "로그인에 실패하였습니다 \n 로그인정보를 다시 확인해주세요");
+			RequestDispatcher rd = request.getRequestDispatcher(url);
+			rd.forward(request, response);
+		}else{
+			request.setAttribute("Message", fail);
+			new LoginFormAction().execute(request, response);
 		}
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
-		
 	}
 
 }
